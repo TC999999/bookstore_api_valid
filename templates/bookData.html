@@ -1,14 +1,19 @@
 {%extends 'base.html'%}{%block title%}{{book.title}}{%endblock%} {%block
 content%}
 <h1>{{book.title}}</h1>
-<ul>
-  <li>ISBN: {{book.isbn}}</li>
-  <li>Author: {{book.author}}</li>
-  <li>Amazon URL: <a href="{{book.amazon_url}}">{{book.amazon_url}}</a></li>
-  <li>Language: {{book.language}}</li>
-  <li>Pages: {{book.pages}}</li>
-  <li>Publisher: {{book.publisher}}</li>
-  <li>Year: {{book.year}}</li>
-</ul>
-<a href="/">Back to Home</a>
+<div id="bookDiv">
+  <ul id="bookInfo">
+    <li>ISBN: {{book.isbn}}</li>
+    <li>Author: {{book.author}}</li>
+    <li>Amazon URL: {{book.amazon_url}}</li>
+    <li>Language: {{book.language}}</li>
+    <li>Pages: {{book.pages}}</li>
+    <li>Publisher: {{book.publisher}}</li>
+    <li>Year: {{book.year}}</li>
+  </ul>
+</div>
+<a class="btn btn-secondary" href="/update/{{book.isbn}}">Update</a>
+<a class="btn btn-danger" href="/delete/{{book.isbn}}">Delete</a>
+<a class="btn btn-primary" href="/">Back to Home</a>
+
 {%endblock%}
